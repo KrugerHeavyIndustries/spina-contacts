@@ -2,8 +2,9 @@ module Spina
    module Contacts
       include ActiveSupport::Configurable
       
-      config_accessor :title, :controller, :description, :spina_icon, :plugin_type 
+      config_accessor :email, :title, :controller, :description, :spina_icon, :plugin_type 
 
+      self.email = "unknown@configure-me.com"
       self.title = "Contact"
       self.controller = 'contacts' 
       self.description = 'Contact Form for Spina'

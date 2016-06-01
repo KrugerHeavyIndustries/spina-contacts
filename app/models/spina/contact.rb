@@ -9,7 +9,7 @@ module Spina
     def headers 
       {
         subject: subject || "Contact from website",
-        to: "chris.kruger@krugerheavyindustries.com",
+        to: Contacts.email,
         from: %("#{name}" <#{email}>)
       }
     end
