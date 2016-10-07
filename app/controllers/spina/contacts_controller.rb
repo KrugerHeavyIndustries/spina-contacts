@@ -7,7 +7,13 @@ module Spina
       def create
         @contact = Contact.new(contact_params)
         if @contact.deliver
-          flash.now[:notice] = 'Thanks'
+          respond_to do |format|
+            if request.xhr?
+              format.js do
+                render file: 'spina/contacts/create.js.erb'
+              end
+            end
+          end
         else
           flash.now[:error] = 'Cannot send message'
           render :new
