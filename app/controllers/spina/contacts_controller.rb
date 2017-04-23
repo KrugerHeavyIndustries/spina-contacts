@@ -21,7 +21,7 @@ module Spina
         respond_to do |format|
           if request.xhr?
             format.js do
-              render file: 'spina/contacts/create.js.erb', locals: { message: message }
+              render file: 'spina/contacts/notice.js.erb', locals: { message: message }
             end
           end
         end
