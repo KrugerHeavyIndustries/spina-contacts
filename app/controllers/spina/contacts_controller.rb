@@ -1,7 +1,7 @@
 module Spina
    class ContactsController < Spina::PagesController
       def new
-        render_with_template(page)
+        render_with_template(Page.find_by!(name: 'contact'))
       end
       
       def create
